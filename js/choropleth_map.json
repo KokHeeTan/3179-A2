@@ -26,7 +26,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/KokHeeTan/Homework9/refs/heads/main/data/sunshine_grouped_states.csv"
+              "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/refs/heads/main/data/sunshine_grouped_states.csv"
             },
             "key": "state",
             "fields": [

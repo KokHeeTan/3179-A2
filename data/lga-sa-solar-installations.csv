@@ -1,42 +1,370 @@
-LGA,2014,2015,2016,2017,2018,2019,2020,2021,2022
-Adelaide,38,55,47,56,58,55,34,45,38
-Adelaide Hills,216,215,188,163,138,123,138,117,121
-Alexandrina,116,125,120,107,83,105,121,61,59
-Barossa,52,40,43,43,30,28,23,26,13
-Barunga West,17,17,6,5,6,8,3,5,2
-Berri and Barmera,21,42,38,9,8,8,8,3,2
-Burnside,7,3,3,6,4,1,1,2,3
-Campbelltown,22,17,17,15,22,15,7,12,10
-Charles Sturt,80,73,74,48,65,46,40,47,67
-Clare and Gilbert Valleys,25,32,11,18,25,16,10,5,10
-Copper Coast,5,9,4,2,4,3,4,3,4
-Flinders Ranges,3,1,3,1,0,2,2,0,0
-Gawler,25,15,20,20,13,5,5,6,5
-Goyder,0,10,7,3,1,0,6,0,1
-Grant,18,43,25,11,8,16,15,9,10
-Holdfast Bay,57,67,49,71,41,57,30,35,33
-Kangaroo Island,7,3,3,4,1,6,0,2,2
-Karoonda East Murray,21,108,32,11,16,8,11,9,11
-Kingston,8,15,6,7,0,4,5,3,4
-Loxton Waikerie,0,0,0,0,0,0,0,0,0
-Mallala,24,22,15,22,16,11,9,21,10
-Marion,48,98,52,49,46,61,51,40,53
-Mid Murray,5,7,4,5,4,1,0,0,0
-Mitcham,30,39,53,50,50,47,35,33,32
-Mount Remarkable,9,22,7,5,6,2,6,3,3
-Naracoorte and Lucindale,6,19,17,5,7,3,3,2,5
-Northern Areas,0,1,0,0,1,0,2,0,0
-Onkaparinga,75,104,68,56,43,55,41,34,44
-Playford,71,128,91,73,48,43,40,33,53
-Port Adelaide Enfield,156,128,130,103,42,60,35,42,40
-Renmark Paringa,3,0,0,1,1,0,0,0,1
-Salisbury,41,50,39,17,18,10,9,10,14
-Southern Mallee,1,0,0,1,0,0,0,0,0
-Tatiara,0,0,0,0,0,0,1,0,0
-Tea Tree Gully,13,17,22,25,19,13,10,11,9
-The Coorong,0,0,0,0,1,1,0,0,0
-Wakefield,3,1,1,0,1,0,0,0,0
-Wattle Range,0,0,1,0,0,0,0,0,0
-West Torrens,5,5,4,2,1,1,2,1,1
-Yankalilla,16,17,17,16,20,6,10,15,9
-Yorke Peninsula,16,27,11,6,5,4,2,6,3
+LGA,Year,Solar_Installation
+Adelaide,2014,38
+Adelaide,2015,55
+Adelaide,2016,47
+Adelaide,2017,56
+Adelaide,2018,58
+Adelaide,2019,55
+Adelaide,2020,34
+Adelaide,2021,45
+Adelaide,2022,38
+Adelaide Hills,2014,216
+Adelaide Hills,2015,215
+Adelaide Hills,2016,188
+Adelaide Hills,2017,163
+Adelaide Hills,2018,138
+Adelaide Hills,2019,123
+Adelaide Hills,2020,138
+Adelaide Hills,2021,117
+Adelaide Hills,2022,121
+Alexandrina,2014,116
+Alexandrina,2015,125
+Alexandrina,2016,120
+Alexandrina,2017,107
+Alexandrina,2018,83
+Alexandrina,2019,105
+Alexandrina,2020,121
+Alexandrina,2021,61
+Alexandrina,2022,59
+Barossa,2014,52
+Barossa,2015,40
+Barossa,2016,43
+Barossa,2017,43
+Barossa,2018,30
+Barossa,2019,28
+Barossa,2020,23
+Barossa,2021,26
+Barossa,2022,13
+Barunga West,2014,17
+Barunga West,2015,17
+Barunga West,2016,6
+Barunga West,2017,5
+Barunga West,2018,6
+Barunga West,2019,8
+Barunga West,2020,3
+Barunga West,2021,5
+Barunga West,2022,2
+Berri and Barmera,2014,21
+Berri and Barmera,2015,42
+Berri and Barmera,2016,38
+Berri and Barmera,2017,9
+Berri and Barmera,2018,8
+Berri and Barmera,2019,8
+Berri and Barmera,2020,8
+Berri and Barmera,2021,3
+Berri and Barmera,2022,2
+Burnside,2014,7
+Burnside,2015,3
+Burnside,2016,3
+Burnside,2017,6
+Burnside,2018,4
+Burnside,2019,1
+Burnside,2020,1
+Burnside,2021,2
+Burnside,2022,3
+Campbelltown,2014,22
+Campbelltown,2015,17
+Campbelltown,2016,17
+Campbelltown,2017,15
+Campbelltown,2018,22
+Campbelltown,2019,15
+Campbelltown,2020,7
+Campbelltown,2021,12
+Campbelltown,2022,10
+Charles Sturt,2014,80
+Charles Sturt,2015,73
+Charles Sturt,2016,74
+Charles Sturt,2017,48
+Charles Sturt,2018,65
+Charles Sturt,2019,46
+Charles Sturt,2020,40
+Charles Sturt,2021,47
+Charles Sturt,2022,67
+Clare and Gilbert Valleys,2014,25
+Clare and Gilbert Valleys,2015,32
+Clare and Gilbert Valleys,2016,11
+Clare and Gilbert Valleys,2017,18
+Clare and Gilbert Valleys,2018,25
+Clare and Gilbert Valleys,2019,16
+Clare and Gilbert Valleys,2020,10
+Clare and Gilbert Valleys,2021,5
+Clare and Gilbert Valleys,2022,10
+Copper Coast,2014,5
+Copper Coast,2015,9
+Copper Coast,2016,4
+Copper Coast,2017,2
+Copper Coast,2018,4
+Copper Coast,2019,3
+Copper Coast,2020,4
+Copper Coast,2021,3
+Copper Coast,2022,4
+Flinders Ranges,2014,3
+Flinders Ranges,2015,1
+Flinders Ranges,2016,3
+Flinders Ranges,2017,1
+Flinders Ranges,2018,0
+Flinders Ranges,2019,2
+Flinders Ranges,2020,2
+Flinders Ranges,2021,0
+Flinders Ranges,2022,0
+Gawler,2014,25
+Gawler,2015,15
+Gawler,2016,20
+Gawler,2017,20
+Gawler,2018,13
+Gawler,2019,5
+Gawler,2020,5
+Gawler,2021,6
+Gawler,2022,5
+Goyder,2014,0
+Goyder,2015,10
+Goyder,2016,7
+Goyder,2017,3
+Goyder,2018,1
+Goyder,2019,0
+Goyder,2020,6
+Goyder,2021,0
+Goyder,2022,1
+Grant,2014,18
+Grant,2015,43
+Grant,2016,25
+Grant,2017,11
+Grant,2018,8
+Grant,2019,16
+Grant,2020,15
+Grant,2021,9
+Grant,2022,10
+Holdfast Bay,2014,57
+Holdfast Bay,2015,67
+Holdfast Bay,2016,49
+Holdfast Bay,2017,71
+Holdfast Bay,2018,41
+Holdfast Bay,2019,57
+Holdfast Bay,2020,30
+Holdfast Bay,2021,35
+Holdfast Bay,2022,33
+Kangaroo Island,2014,7
+Kangaroo Island,2015,3
+Kangaroo Island,2016,3
+Kangaroo Island,2017,4
+Kangaroo Island,2018,1
+Kangaroo Island,2019,6
+Kangaroo Island,2020,0
+Kangaroo Island,2021,2
+Kangaroo Island,2022,2
+Karoonda East Murray,2014,21
+Karoonda East Murray,2015,108
+Karoonda East Murray,2016,32
+Karoonda East Murray,2017,11
+Karoonda East Murray,2018,16
+Karoonda East Murray,2019,8
+Karoonda East Murray,2020,11
+Karoonda East Murray,2021,9
+Karoonda East Murray,2022,11
+Kingston,2014,8
+Kingston,2015,15
+Kingston,2016,6
+Kingston,2017,7
+Kingston,2018,0
+Kingston,2019,4
+Kingston,2020,5
+Kingston,2021,3
+Kingston,2022,4
+Loxton Waikerie,2014,0
+Loxton Waikerie,2015,0
+Loxton Waikerie,2016,0
+Loxton Waikerie,2017,0
+Loxton Waikerie,2018,0
+Loxton Waikerie,2019,0
+Loxton Waikerie,2020,0
+Loxton Waikerie,2021,0
+Loxton Waikerie,2022,0
+Mallala,2014,24
+Mallala,2015,22
+Mallala,2016,15
+Mallala,2017,22
+Mallala,2018,16
+Mallala,2019,11
+Mallala,2020,9
+Mallala,2021,21
+Mallala,2022,10
+Marion,2014,48
+Marion,2015,98
+Marion,2016,52
+Marion,2017,49
+Marion,2018,46
+Marion,2019,61
+Marion,2020,51
+Marion,2021,40
+Marion,2022,53
+Mid Murray,2014,5
+Mid Murray,2015,7
+Mid Murray,2016,4
+Mid Murray,2017,5
+Mid Murray,2018,4
+Mid Murray,2019,1
+Mid Murray,2020,0
+Mid Murray,2021,0
+Mid Murray,2022,0
+Mitcham,2014,30
+Mitcham,2015,39
+Mitcham,2016,53
+Mitcham,2017,50
+Mitcham,2018,50
+Mitcham,2019,47
+Mitcham,2020,35
+Mitcham,2021,33
+Mitcham,2022,32
+Mount Remarkable,2014,9
+Mount Remarkable,2015,22
+Mount Remarkable,2016,7
+Mount Remarkable,2017,5
+Mount Remarkable,2018,6
+Mount Remarkable,2019,2
+Mount Remarkable,2020,6
+Mount Remarkable,2021,3
+Mount Remarkable,2022,3
+Naracoorte and Lucindale,2014,6
+Naracoorte and Lucindale,2015,19
+Naracoorte and Lucindale,2016,17
+Naracoorte and Lucindale,2017,5
+Naracoorte and Lucindale,2018,7
+Naracoorte and Lucindale,2019,3
+Naracoorte and Lucindale,2020,3
+Naracoorte and Lucindale,2021,2
+Naracoorte and Lucindale,2022,5
+Northern Areas,2014,0
+Northern Areas,2015,1
+Northern Areas,2016,0
+Northern Areas,2017,0
+Northern Areas,2018,1
+Northern Areas,2019,0
+Northern Areas,2020,2
+Northern Areas,2021,0
+Northern Areas,2022,0
+Onkaparinga,2014,75
+Onkaparinga,2015,104
+Onkaparinga,2016,68
+Onkaparinga,2017,56
+Onkaparinga,2018,43
+Onkaparinga,2019,55
+Onkaparinga,2020,41
+Onkaparinga,2021,34
+Onkaparinga,2022,44
+Playford,2014,71
+Playford,2015,128
+Playford,2016,91
+Playford,2017,73
+Playford,2018,48
+Playford,2019,43
+Playford,2020,40
+Playford,2021,33
+Playford,2022,53
+Port Adelaide Enfield,2014,156
+Port Adelaide Enfield,2015,128
+Port Adelaide Enfield,2016,130
+Port Adelaide Enfield,2017,103
+Port Adelaide Enfield,2018,42
+Port Adelaide Enfield,2019,60
+Port Adelaide Enfield,2020,35
+Port Adelaide Enfield,2021,42
+Port Adelaide Enfield,2022,40
+Renmark Paringa,2014,3
+Renmark Paringa,2015,0
+Renmark Paringa,2016,0
+Renmark Paringa,2017,1
+Renmark Paringa,2018,1
+Renmark Paringa,2019,0
+Renmark Paringa,2020,0
+Renmark Paringa,2021,0
+Renmark Paringa,2022,1
+Salisbury,2014,41
+Salisbury,2015,50
+Salisbury,2016,39
+Salisbury,2017,17
+Salisbury,2018,18
+Salisbury,2019,10
+Salisbury,2020,9
+Salisbury,2021,10
+Salisbury,2022,14
+Southern Mallee,2014,1
+Southern Mallee,2015,0
+Southern Mallee,2016,0
+Southern Mallee,2017,1
+Southern Mallee,2018,0
+Southern Mallee,2019,0
+Southern Mallee,2020,0
+Southern Mallee,2021,0
+Southern Mallee,2022,0
+Tatiara,2014,0
+Tatiara,2015,0
+Tatiara,2016,0
+Tatiara,2017,0
+Tatiara,2018,0
+Tatiara,2019,0
+Tatiara,2020,1
+Tatiara,2021,0
+Tatiara,2022,0
+Tea Tree Gully,2014,13
+Tea Tree Gully,2015,17
+Tea Tree Gully,2016,22
+Tea Tree Gully,2017,25
+Tea Tree Gully,2018,19
+Tea Tree Gully,2019,13
+Tea Tree Gully,2020,10
+Tea Tree Gully,2021,11
+Tea Tree Gully,2022,9
+The Coorong,2014,0
+The Coorong,2015,0
+The Coorong,2016,0
+The Coorong,2017,0
+The Coorong,2018,1
+The Coorong,2019,1
+The Coorong,2020,0
+The Coorong,2021,0
+The Coorong,2022,0
+Wakefield,2014,3
+Wakefield,2015,1
+Wakefield,2016,1
+Wakefield,2017,0
+Wakefield,2018,1
+Wakefield,2019,0
+Wakefield,2020,0
+Wakefield,2021,0
+Wakefield,2022,0
+Wattle Range,2014,0
+Wattle Range,2015,0
+Wattle Range,2016,1
+Wattle Range,2017,0
+Wattle Range,2018,0
+Wattle Range,2019,0
+Wattle Range,2020,0
+Wattle Range,2021,0
+Wattle Range,2022,0
+West Torrens,2014,5
+West Torrens,2015,5
+West Torrens,2016,4
+West Torrens,2017,2
+West Torrens,2018,1
+West Torrens,2019,1
+West Torrens,2020,2
+West Torrens,2021,1
+West Torrens,2022,1
+Yankalilla,2014,16
+Yankalilla,2015,17
+Yankalilla,2016,17
+Yankalilla,2017,16
+Yankalilla,2018,20
+Yankalilla,2019,6
+Yankalilla,2020,10
+Yankalilla,2021,15
+Yankalilla,2022,9
+Yorke Peninsula,2014,16
+Yorke Peninsula,2015,27
+Yorke Peninsula,2016,11
+Yorke Peninsula,2017,6
+Yorke Peninsula,2018,5
+Yorke Peninsula,2019,4
+Yorke Peninsula,2020,2
+Yorke Peninsula,2021,6
+Yorke Peninsula,2022,3

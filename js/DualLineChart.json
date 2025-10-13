@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Solar Installations vs Capacity", "fontSize": 20},
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/main/data/LineChartData.csv",
+    "format": {"type": "csv", "parse": {"Year": "number"}}
+  },
+
+  "params": [
+    {
+      "name": "stateSelect",
+      "value": "QLD",
+      "bind": {
+        "input": "select",
+        "options": ["NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+        "labels": ["NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
+        "name": "Select State: "
+      }
+    }
+  ],
+
+  "transform": [
+    {"filter": "datum.State == stateSelect"},
+    {"window": [{"op": "max", "field": "Year", "as": "maxYear"}]}
+  ],
+
+  "layer": [
+    {
+      "mark": {"type": "line", "color": "#60a5fa", "strokeWidth": 3, "point": true},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "axis": {"labelAngle": 0}},
+        "y": {"field": "Solar_Installation", "type": "quantitative", "title": "Number of Installation"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Year == datum.maxYear"}],
+      "mark": {
+        "type": "text",
+        "color": "#60a5fa",
+        "dy": 23,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Solar_Installation", "type": "quantitative", "axis": null},
+        "text": {"field": "Solar_Installation", "type": "quantitative", "format": ","}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#f97316", "strokeDash": [6, 3], "strokeWidth": 3, "point": true},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {
+          "field": "Solar_Capacity",
+          "type": "quantitative",
+          "axis": {"orient": "right", "title": "Solar Capacity (MW)"}
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Year == datum.maxYear"}],
+      "mark": {
+        "type": "text",
+        "color": "#f97316",
+        "dy": -23,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Solar_Capacity", "type": "quantitative", "axis": null},
+        "text": {"field": "Solar_Capacity", "type": "quantitative", "format": ","}
+      }
+    }
+  ],
+
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 13},
+    "view": {"stroke": null}
+  }
+}

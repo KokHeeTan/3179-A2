@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Solar Capacity per Capita", "fontSize": 20},
+  "width": 500,
+  "height": 300,
+  "data": { 
+    "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/refs/heads/main/data/capacity_per_capita.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"Year": "number", "Capacity Per Capita": "number"}
+    }
+  },
+  "transform": [
+    {"filter": "datum.Year == 2014 || datum.Year == 2022"}
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 1.5,
+        "stroke": "#cbd5e1"
+      },
+      "encoding": {
+        "y": {"field": "State", "type": "nominal", "title": null},
+        "x": {"field": "Capacity Per Capita", "type": "quantitative", "title": "Capacity per Capita"},
+        "detail": {"field": "State", "type": "nominal"}
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "y": {"field": "State", "type": "nominal"},
+        "x": {"field": "Capacity Per Capita", "type": "quantitative"},
+        "color": {
+          "field": "Year",
+          "type": "nominal",
+          "scale": {
+            "domain": [2014, 2022],
+            "range": ["#475569", "#dc2626"]
+          },
+          "legend": {
+            "title": "Year Of Date",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "Capacity Per Capita", "title": "Capacity per Capita", "format": ".1f"},
+          {"field": "Year", "title": "Year"}
+        ]
+      }
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "State", 
+      "type": "nominal", 
+      "title": null,
+      "sort": "-x"
+    },
+    "x": {
+      "field": "Capacity Per Capita", 
+      "type": "quantitative", 
+      "title": "Capacity per Capita"
+    }
+  },
+  "config": {
+    "axis": {
+      "labelFont": "Inter, sans-serif",
+      "titleFont": "Inter, sans-serif",
+      "titleFontWeight": "normal"
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "background": "transparent"
+  }
+}

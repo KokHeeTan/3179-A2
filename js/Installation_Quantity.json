@@ -1,12 +1,75 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 600,
-    "data": { "url": "data/COVID_19.csv" },
-    "mark": { "type": "bar" },
-    "encoding": {
-        "x": { "timeUnit": "yearmonth", "field": "date", "type": "ordinal", "title":null },
-        "y": { "aggregate": "sum", "field": "new_cases", "title": "Sun of New Cases" },
-        "color": { "field": "continent", "title": "Continent" }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Solar Installation", "fontSize": 20},
+  "width": 500,
+  "height": 300,
+  "data": { 
+    "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/refs/heads/main/data/Installation_Quantity.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"Year": "number", "Quantity": "number"}
     }
+  },
+  "layer": [
+    {
+      "mark": { 
+        "type": "bar"
+      },
+      "encoding": {
+        "x": { 
+          "field": "Year", 
+          "type": "ordinal",
+          "axis":{"labelAngle":0}
+        },
+        "y": { 
+          "field": "Quantity", 
+          "type": "quantitative", 
+          "stack": "zero"
+        },
+        "color": { 
+          "field": "State", 
+          "legend": {
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "Year", "title": "Year"},
+          {"field": "Quantity", "title": "Installations"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -8,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Quantity", "type": "quantitative", "stack": "zero", "aggregate": "sum"},
+        "text": {"field": "Quantity", "type": "quantitative", "aggregate": "sum"},
+        "tooltip": [
+          {"field": "Year", "title": "Year"},
+          {"field": "Quantity", "title": "Total Installations", "aggregate": "sum"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "domain": false,
+      "ticks": false,
+      "grid": false
+    },
+    "axisY": {
+      "labels": false,
+      "title": null
+    },
+    "background": "transparent"
+  }
 }

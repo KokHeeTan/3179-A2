@@ -1,108 +1,218 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Australia Solar Energy and Sunlight hour</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
-    <style>
-      body {
-        background: white;
-        font-family: Arial, sans-serif;
-      }
-      .page {
-        max-width: 1000px;
-        background: white;
-        width: 90%;
-        margin: auto;
-        padding: 20px;
-      }
-      .header {
-        text-align: center;
-        border-bottom: 1px solid gray;
-        margin-bottom: 20px;
-      }
-      .chart-container {
-        display: flex;
-        gap: 5px;
-        margin-bottom: 5px;
-        align-items: flex-start; /* keep tops aligned; prevents huge middle gap */
-      }
-      .chart-left {
-        flex: 50px;       /* limit chart column width */
-        max-width: 600px;
-        width: 100%;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* center chart inside its box */
-        align-items: center;
-      }
-      .chart-left {
-        flex: 50px;       /* limit chart column width */
-        max-width: 600px;
-        width: 100%;
-        padding: 10px;
-        display: flex;
-        justify-content: center; /* center chart inside its box */
-        align-items: center;
-      }
-      .footer {
-        text-align: center;
-        border-top: 1px solid gray;
-        color: gray;
-        font-size: 0.8em;
-      }
+<head>
+  <title>Australia Solar Energy Dashboard</title>
+  
+  <!-- Include Vega libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: darkblue;
+    }
+    
+    h2 {
+      text-align: center;
+      color: darkblue;
+      font-size: 18px;
+    }
+    
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border: 2px solid lightgray;
+      border-radius: 5px;
+    }
 
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <div class="header">
-        <h1>Australia Solar Energy and Sunlight Hour</h1>
-        <p>Solar energy installation and capacity with the analysis of sunlignt across Australian states and territories from 2014 to 2022</p>
-      </div>
+    header {
+      text-align: center;
+      border-bottom: 1px solid gray;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+    }
 
-      <div class="chart-container">
-        <div class="chart-left" id="choropleth_map"></div>
-        <div class="chart-right">
-          <p>DESCRIPTION AND EXPLANATION : sunlight hour across states.</p>
+    footer {
+      text-align: center;
+      border-top: 1px solid gray;
+      margin-top: 20px;
+      padding-top: 15px;
+      font-size: 12px;
+      color: gray;
+    }
+    
+    .two-column {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .chart-box {
+      flex: 1;
+    }
+    
+    .text-box {
+      flex: 1;
+    }
+    
+    .nsw { color: #4c78a8; font-weight: bold; }
+    .nt { color: #f58518; font-weight: bold; }
+    .qld { color: #e45756; font-weight: bold; }
+    .sa { color: #72b7b2; font-weight: bold; }
+    .tas { color: #54a24b; font-weight: bold; }
+    .vic { color: #eeca3b; font-weight: bold; }
+    .wa { color: #b279a2; font-weight: bold; }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Australia Solar Energy Dashboard</h1>
+
+    <header>
+      <p>Solar Energy Installation and Capacity with the analysis of Sunlight Hours across Australia State and territories from 2014 - 2022</p>
+    </header>
+
+    <!-- 1. World sunlight map -->
+    <section>
+      <h2>Global Monthly Sunlight Hours</h2>
+      <p>
+        This <b>choropleth map</b> shows monthly sunlight patterns across the world. 
+        We can see that the Equatorial regions stay bright through all months. 
+        The Northern areas gain stronger light after January as seasons shift. 
+        Whereas, Southern regions start losing sunlight during early months. 
+        This light shifting pattern shows Earth's seasonal solar rhythm.
+      </p>
+      <p>Use the slider to explore changes from January onward.</p>
+      <div id="world_map"></div>
+    </section>
+
+    <!-- 2. Australia sunlight map -->
+    <section>
+      <h2>Australia Daily Average Sunlight Hours</h2>
+      <div class="two-column">
+        <div class="chart-box">
+          <div id="choropleth_map"></div>
+        </div>
+        <div class="text-box">
+          <p>
+            This <b>choropleth map</b>  highlights average daily sunlight across Australian states.
+            The Northern and central regions receive the highest sunlight exposure.
+            Whereas, Southern areas, especially <span class="tas">Tasmania</span> and <span class="vic">Victoria</span> have fewer sunlight hours.
+            This highlights Australia's strong potential for solar energy generation.
+          </p>
+          <p>
+            <span class="vic">Victoria</span> is known for "four seasons in one day" weather.
+            This is the reason why <span class="vic">Victoria</span> has the least average sunlight hour.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="chart-container">
-        <div class="chart-right" id="stacked_bar_chart"></div>
-        <div class="chart-right">
-          <p>DESCRIPTION AND EXPLANATION : Solar installation growth by state per year.</p>
+    <!-- 3. Solar installation chart -->
+    <section>
+      <h2>Solar Installations by State</h2>
+      <div id="stacked_bar_chart"></div>
+      <p>
+        This <b>stacked bar chart</b> connects closely with the Australia Daily Average Sunlight Hours map.
+        States with higher average sunlight, like <span class="qld">Queensland</span> and <span class="wa">Western Australia</span>, show stronger solar installation growth.
+        Regions with fewer sunlight hours, such as <span class="vic">Victoria</span> and <span class="tas">Tasmania</span>, lag slightly behind.
+        This relationship suggests sunlight availability directly influences adoption rates.
+      </p>
+    </section>
+
+    <!-- 4. Solar capacity per capita -->
+    <section>
+      <h2>Solar Capacity per Capita</h2>
+      <div class="two-column">
+        <div class="text-box">
+          <p>
+            This <b>dumbbell chart</b> visualizes solar capacity per capita across Australian states in 2014 and 2022.
+            Each line connects two points showing change over time.
+          </p>
+          <p>
+            Most states, including <span class="qld">Queensland</span>, <span class="sa">South Australia</span>, and <span class="wa">Western Australia</span>, experienced significant increases.
+            <span class="sa">South Australia</span> stands out with the highest solar capacity per person.
+          </p>
+          <p>
+            <span class="tas">Tasmania</span> is the only state to decline, possibly due to lower solar intensity.
+            The <span class="nt">Northern Territory</span> remains the lowest despite abundant sunlight.
+          </p>
+        </div>
+        <div class="chart-box">
+          <div id="dumbbell_chart"></div>
         </div>
       </div>
+    </section>
 
-      <div class="chart-container">
-        <div class="chart-right" id="dumbbell_chart"></div>
-        <div class="chart-left">
-          <p>DESCRIPTION AND EXPLANATION : capacity per Capita</p>
+    <!-- 5. Solar installation vs capacity -->
+    <section>
+      <h2>Installations vs Capacity Over Time</h2>
+      <div class="two-column">
+        <div class="chart-box">
+          <div id="dual_chart"></div>
+        </div>
+        <div class="text-box">
+          <p>
+            This <b>dual-line chart</b> compares solar installations and capacity over time.
+            Both metrics rise sharply after 2016, showing strong policy impact.
+          </p>
+          <p>
+            Installations and capacity peaked between 2018 and 2021.
+            The 2022 decline may reflect post-COVID financial constraints.
+            Households likely had less budget for solar investments during recovery.
+          </p>
+          <p>
+            Users can use the dropdown box to explore different states.
+            This allows easy comparison of regional solar trends and performance.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="chart-container">
-        <div class="chart-right" id="dual_chart"></div>
-        <div class="chart-right">
-          <p>DESCRIPTION AND EXPLANATION : Installations vs capacity over time.</p>
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>Data: </p>
-        <p1>Created By KOK HEE TAN</p1>
-        <p>Date:</p>
-      </div>
+    <!-- Footer -->
+    <div style="text-align: center; border-top: 1px solid gray; padding-top: 15px; font-size: 12px; color: gray;">
+      <p><strong>Data Sources:</strong></p>
+      <p>
+        <a href="https://cer.gov.au/markets/reports-and-data/small-scale-installation-postcode-data">
+          Clean Energy Regulator - Small-scale Installation Data
+        </a> |
+        <a href="https://www.kaggle.com/datasets/bilalwaseer/sunshine-hours-for-cities-around-the-world?resource=download&select=Sunshine+hours+for+cities+in+the+world.csv">
+          World Sunshine Hours Dataset
+        </a> |
+        <a href="https://www.bom.gov.au/climate/maps/averages/sunshine-hours/">
+          Bureau of Meteorology - Australian Sunshine Data
+        </a>
+      </p>
+      <p>Created by <strong>Kok Hee Tan</strong> | Date: 20/10/2025</p>
     </div>
+  </div>
 
-    <script>
-      vegaEmbed('#choropleth_map', 'js/choropleth_map.json');
-      vegaEmbed('#stacked_bar_chart', 'js/Installation_Quantity.json');
-      vegaEmbed('#dumbbell_chart', 'js/SolarPerCapita.json');
-      vegaEmbed('#dual_chart', 'js/DualLineChart.json');
-    </script>
-  </body>
+  <!-- Load the charts -->
+  <script>
+    // Load all the charts
+    vegaEmbed("#world_map", "js/world_map.json");
+    vegaEmbed("#choropleth_map", "js/choropleth_map.json");
+    vegaEmbed("#stacked_bar_chart", "js/Installation_Quantity.json");
+    vegaEmbed("#dumbbell_chart", "js/SolarPerCapita.json");
+    vegaEmbed("#dual_chart", "js/DualLineChart.json");
+  </script>
+</body>
 </html>

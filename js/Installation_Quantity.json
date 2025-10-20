@@ -1,37 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Solar Installation", "fontSize": 20},
-  "width": 500,
-  "height": 300,
-  "data": { 
-    "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/refs/heads/main/data/Installation_Quantity.csv",
-    "format": {
-      "type": "csv",
-      "parse": {"Year": "number", "Quantity": "number"}
-    }
+  "width": 850,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/refs/heads/main/data/Installation_Quantity.csv"
   },
+
   "layer": [
     {
-      "mark": { 
-        "type": "bar"
-      },
+      "mark": {"type": "bar"},
       "encoding": {
-        "x": { 
-          "field": "Year", 
-          "type": "ordinal",
-          "axis":{"labelAngle":0}
-        },
-        "y": { 
-          "field": "Quantity", 
-          "type": "quantitative", 
-          "stack": "zero"
-        },
-        "color": { 
-          "field": "State", 
-          "legend": {
-            "orient": "right"
-          }
-        },
+        "x": {"field": "Year", "type": "ordinal", "axis": {"labelAngle": 0}},
+        "y": {"field": "Quantity", "type": "quantitative", "stack": "zero"},
+        "color": {"field": "State", "legend": {"orient": "right"}},
         "tooltip": [
           {"field": "State", "title": "State"},
           {"field": "Year", "title": "Year"},
@@ -39,37 +20,45 @@
         ]
       }
     },
+
     {
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -8, "fontSize": 12, "fontWeight": "bold"},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"aggregate": "sum", "field": "Quantity", "type": "quantitative"},
+        "text": {"aggregate": "sum", "field": "Quantity", "type": "quantitative"}
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "Year": "2016",
+            "y": 250000,
+            "text": "Government incentives introduced\nsparked a rebound in installations"
+          }
+        ]
+      },
       "mark": {
         "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -8,
-        "fontSize": 12,
-        "fontWeight": "bold"
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "fill": "red",
+        "lineBreak": "\n"
       },
       "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
-        "y": {"field": "Quantity", "type": "quantitative", "stack": "zero", "aggregate": "sum"},
-        "text": {"field": "Quantity", "type": "quantitative", "aggregate": "sum"},
-        "tooltip": [
-          {"field": "Year", "title": "Year"},
-          {"field": "Quantity", "title": "Total Installations", "aggregate": "sum"}
-        ]
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "text"}
       }
     }
   ],
+
   "config": {
     "view": {"stroke": "transparent"},
-    "axis": {
-      "domain": false,
-      "ticks": false,
-      "grid": false
-    },
-    "axisY": {
-      "labels": false,
-      "title": null
-    },
+    "axis": {"domain": false, "ticks": false, "grid": false},
+    "axisY": {"labels": false, "title": null},
     "background": "transparent"
   }
 }

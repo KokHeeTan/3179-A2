@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Solar Installations vs Capacity", "fontSize": 20},
-  "width": 500,
-  "height": 300,
+  "width": 450,
+  "height": 380,
   "data": {
     "url": "https://raw.githubusercontent.com/KokHeeTan/3179-A2/main/data/LineChartData.csv",
     "format": {"type": "csv", "parse": {"Year": "number"}}
@@ -15,7 +14,6 @@
       "bind": {
         "input": "select",
         "options": ["NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
-        "labels": ["NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
         "name": "Select State: "
       }
     }
@@ -28,7 +26,7 @@
 
   "layer": [
     {
-      "mark": {"type": "line", "color": "#60a5fa", "strokeWidth": 3, "point": true},
+      "mark": {"type": "line", "color": "blue", "point": true},
       "encoding": {
         "x": {"field": "Year", "type": "ordinal", "axis": {"labelAngle": 0}},
         "y": {"field": "Solar_Installation", "type": "quantitative", "title": "Number of Installation"}
@@ -38,10 +36,8 @@
       "transform": [{"filter": "datum.Year == datum.maxYear"}],
       "mark": {
         "type": "text",
-        "color": "#60a5fa",
-        "dy": 23,
-        "fontSize": 11,
-        "fontWeight": "bold"
+        "color": "blue",
+        "dy": 23
       },
       "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
@@ -50,7 +46,7 @@
       }
     },
     {
-      "mark": {"type": "line", "color": "#f97316", "strokeDash": [6, 3], "strokeWidth": 3, "point": true},
+      "mark": {"type": "line", "color": "orange", "strokeDash": [6, 3], "point": true},
       "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
         "y": {
@@ -62,13 +58,7 @@
     },
     {
       "transform": [{"filter": "datum.Year == datum.maxYear"}],
-      "mark": {
-        "type": "text",
-        "color": "#f97316",
-        "dy": -23,
-        "fontSize": 11,
-        "fontWeight": "bold"
-      },
+      "mark": {"type": "text","color": "orange","dy": -23},
       "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
         "y": {"field": "Solar_Capacity", "type": "quantitative", "axis": null},
@@ -76,7 +66,6 @@
       }
     }
   ],
-
   "resolve": {"scale": {"y": "independent"}},
   "config": {
     "axis": {"labelFontSize": 12, "titleFontSize": 13},

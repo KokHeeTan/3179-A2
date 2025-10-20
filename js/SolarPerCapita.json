@@ -45,8 +45,8 @@
         "values": [
           {
             "State": "TAS",
-            "Capacity Per Capita": 3,
-            "text": "TAS is the only state to decline \n between2014 and 2022"
+            "Capacity Per Capita": 3.5,
+            "text": "TAS is the only state to decline \n between 2014 and 2022"
           }
         ]
       },

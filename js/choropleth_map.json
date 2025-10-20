@@ -13,9 +13,6 @@
     },
   "layer": [
     {
-      "mark": {"type": "geoshape","fill": "gainsboro","stroke": "white"}
-    },
-    {
       "transform": [
         {
           "lookup": "properties.name",
